@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotel Hambi — Premium Hospitality in Diphu, Assam</title>
+  <meta name="description" content="Hotel Hambi, Diphu's finest hotel near Kasa Stadium, Assam. Luxury comfort at affordable prices. Rooms, restaurant, and banquet services." />
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAVIGATION ─────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Hotel Hambi</span>
+      <span class="nav-logo-tag">Diphu · Assam</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="admin.html">Admin</a>
+</div>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Diphu's Premier Destination
+    </div>
+    <h1 class="hero-title">
+      Hotel<br><em>Hambi</em>
+    </h1>
+    <p class="hero-tagline">Where Assamese warmth meets refined comfort</p>
+    <div class="hero-cta">
+      <a href="rooms.html" class="btn btn-gold">
+        ✦ &nbsp;Book Your Stay
+      </a>
+      <a href="about.html" class="btn btn-outline">
+        Discover More
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="hero-scroll-line"></div>
+    Scroll
+  </div>
+
+  <div class="hero-location">
+    📍 &nbsp;Near Kasa Stadium, Diphu, Assam
+  </div>
+</section>
+
+<!-- ── HIGHLIGHTS ─────────────────────────────────────────── -->
+<section class="highlights">
+  <div class="highlights-grid">
+    <div class="highlight-card fade-in">
+      <span class="highlight-icon">🛏️</span>
+      <h3>Comfortable Rooms</h3>
+      <p>Thoughtfully designed rooms from budget singles to premium suites — clean, AC, and cozy.</p>
+    </div>
+    <div class="highlight-card fade-in fade-in-delay-1">
+      <span class="highlight-icon">💰</span>
+      <h3>Affordable Pricing</h3>
+      <p>Enjoy premium hospitality starting at just ₹800/night. Comfort shouldn't cost a fortune.</p>
+    </div>
+    <div class="highlight-card fade-in fade-in-delay-2">
+      <span class="highlight-icon">🍽️</span>
+      <h3>Restaurant</h3>
+      <p>Savor local Assamese cuisine and North Indian dishes at our in-house restaurant.</p>
+    </div>
+    <div class="highlight-card fade-in fade-in-delay-3">
+      <span class="highlight-icon">🎉</span>
+      <h3>Event Hosting</h3>
+      <p>Weddings, corporate events, and celebrations — our banquet hall accommodates all.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT STRIP ────────────────────────────────────────── -->
+<section class="about-strip section-pad">
+  <div class="container">
+    <div class="about-strip-inner">
+      <div class="about-strip-img fade-in">
+        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?w=800&q=80"
+             alt="Hotel Hambi lobby" loading="lazy" />
+      </div>
+      <div class="about-strip-text fade-in fade-in-delay-2">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">A Landmark of Hospitality<br>in the Heart of Diphu</h2>
+        <div class="gold-divider left"></div>
+        <p>Nestled near the iconic Kasa Stadium in Diphu, Assam, Hotel Hambi has been welcoming guests with the warmth of traditional Assamese hospitality since 2010. We blend cultural richness with modern comfort.</p>
+        <p>From a travelling executive to a family on a wedding visit — every guest receives personalised care, clean accommodation, and memorable meals.</p>
+        <div class="amenities-list">
+          <div class="amenity-item">Free High-Speed WiFi</div>
+          <div class="amenity-item">Air Conditioning</div>
+          <div class="amenity-item">24/7 Room Service</div>
+          <div class="amenity-item">Secure Parking</div>
+          <div class="amenity-item">In-House Restaurant</div>
+          <div class="amenity-item">Banquet Hall</div>
+          <div class="amenity-item">Laundry Service</div>
+          <div class="amenity-item">CCTV Security</div>
+        </div>
+        <a href="about.html" class="btn btn-outline" style="margin-top:1.5rem">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROOMS PREVIEW ──────────────────────────────────────── -->
+<section class="rooms-preview">
+  <div class="container">
+    <div class="rooms-preview-header">
+      <div>
+        <span class="section-label">Accommodation</span>
+        <h2 class="section-title fade-in">Our Rooms &amp; Suites</h2>
+        <p class="section-sub fade-in fade-in-delay-1">Comfort crafted for every traveller</p>
+      </div>
+      <a href="rooms.html" class="btn btn-outline fade-in fade-in-delay-2">View All Rooms →</a>
+    </div>
+    <!-- Dynamic room grid -->
+    <div class="rooms-grid" id="rooms-preview-grid">
+      <!-- Populated by main.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ───────────────────────────────────────── -->
+<section class="testimonials section-pad">
+  <div class="container">
+    <div class="testimonials-header text-center">
+      <span class="section-label">Guest Reviews</span>
+      <h2 class="section-title fade-in">What Our Guests Say</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>Stayed here for a business visit to Diphu and was pleasantly surprised. Clean rooms, great food, and the staff were incredibly helpful. Will definitely return.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RB</div>
+          <div>
+            <div class="testimonial-name">Rajesh Bora</div>
+            <div class="testimonial-loc">Guwahati, Assam</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <blockquote>Our family hosted a wedding reception here and the banquet team was outstanding. Every detail was handled with care. The food was absolutely delicious!</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">PM</div>
+          <div>
+            <div class="testimonial-name">Priya Mahanta</div>
+            <div class="testimonial-loc">Jorhat, Assam</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-in fade-in-delay-2">
+        <div class="testimonial-stars">★★★★☆</div>
+        <blockquote>Very affordable and comfortable. The location near Kasa Stadium is perfect. Room service was prompt, WiFi worked great throughout my 4-day stay.</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">AS</div>
+          <div>
+            <div class="testimonial-name">Aman Singh</div>
+            <div class="testimonial-loc">Delhi</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY PREVIEW ────────────────────────────────────── -->
+<section class="gallery-preview">
+  <div class="container">
+    <div class="text-center fade-in">
+      <span class="section-label">Gallery</span>
+      <h2 class="section-title">A Glimpse of Hambi</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=75" alt="Hotel exterior" loading="lazy" />
+        <div class="gallery-item-overlay"><span>⊕</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=600&q=75" alt="Deluxe room" loading="lazy" />
+        <div class="gallery-item-overlay"><span>⊕</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=75" alt="Restaurant" loading="lazy" />
+        <div class="gallery-item-overlay"><span>⊕</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=75" alt="Banquet hall" loading="lazy" />
+        <div class="gallery-item-overlay"><span>⊕</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=75" alt="Suite" loading="lazy" />
+        <div class="gallery-item-overlay"><span>⊕</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ─────────────────────────────────────────── -->
+<section class="cta-banner">
+  <div class="container cta-banner-inner fade-in">
+    <h2>Ready to Experience<br>Assamese Hospitality?</h2>
+    <p>Book your room today — best rates guaranteed directly with us.</p>
+    <a href="rooms.html" class="btn btn-gold">✦ &nbsp;Reserve Your Room</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Hotel Hambi</div>
+        <div class="footer-brand-tag">Diphu · Assam · India</div>
+        <p>Delivering genuine Assamese warmth and modern comfort near Kasa Stadium, Diphu since 2010.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Restaurant</a></li>
+          <li><a href="#">Banquet Hall</a></li>
+          <li><a href="#">Room Service</a></li>
+          <li><a href="#">Parking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          Near Kasa Stadium, Diphu, Karbi Anglong, Assam 782460
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          +91 XXXXX XXXXX
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          info@hotelhambi.in
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="current-year"></span> Hotel Hambi. All rights reserved.</p>
+      <p>Designed with ✦ in Assam · <a href="admin.html">Admin Panel</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ── BOOKING MODAL ──────────────────────────────────────── -->
+<div class="booking-modal-overlay" id="booking-modal">
+  <div class="booking-modal">
+    <button class="modal-close" onclick="closeBookingModal()">✕</button>
+    <h2>Reserve Your Room</h2>
+    <p class="room-preview-name"></p>
+    <p id="bm-price" style="color:var(--gold);font-family:var(--font-serif);font-size:1.2rem;font-style:italic;margin-bottom:1.5rem"></p>
+    <form id="booking-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Check-In</label>
+          <input type="date" name="checkin" required />
+        </div>
+        <div class="form-group">
+          <label>Check-Out</label>
+          <input type="date" name="checkout" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Full name" required />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required />
+      </div>
+      <div class="form-group">
+        <label>Guests</label>
+        <select name="guests">
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:0.5rem">
+        Confirm Booking Request
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rooms &amp; Suites — Hotel Hambi, Diphu</title>
+  <meta name="description" content="Browse all room types at Hotel Hambi, Diphu. Budget singles to premium suites, all with AC, WiFi, and room service." />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Hotel Hambi</span>
+      <span class="nav-logo-tag">Diphu · Assam</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html" class="active">Rooms</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="admin.html">Admin</a>
+</div>
+
+<!-- ── PAGE HERO ── -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Rooms &amp; Suites</span>
+    </div>
+    <h1 class="fade-in">Rooms &amp; <span class="text-gold">Suites</span></h1>
+    <p class="fade-in fade-in-delay-1">Every room tells a story of comfort — choose yours</p>
+  </div>
+</section>
+
+<!-- ── WHY STAY ── -->
+<section style="padding:3rem 0;background:var(--navy-mid);border-bottom:1px solid rgba(212,175,55,0.1)">
+  <div class="container">
+    <div style="display:flex;gap:3rem;flex-wrap:wrap;justify-content:center;text-align:center">
+      <div class="fade-in">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem">🏆</div>
+        <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Best Rate</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:0.2rem">Guaranteed direct</div>
+      </div>
+      <div class="fade-in fade-in-delay-1">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem">🔄</div>
+        <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Free Cancellation</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:0.2rem">Up to 24 hrs before</div>
+      </div>
+      <div class="fade-in fade-in-delay-2">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem">📶</div>
+        <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Free WiFi</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:0.2rem">High-speed in all rooms</div>
+      </div>
+      <div class="fade-in fade-in-delay-3">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem">🍳</div>
+        <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Breakfast Option</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:0.2rem">From ₹150 per person</div>
+      </div>
+      <div class="fade-in fade-in-delay-4">
+        <div style="font-size:1.6rem;margin-bottom:0.4rem">🚗</div>
+        <div style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold)">Free Parking</div>
+        <div style="font-size:0.82rem;color:var(--text-muted);margin-top:0.2rem">Secure on-site parking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROOMS LISTING ── -->
+<section class="rooms-section">
+  <div class="container">
+    <!-- Filter Bar -->
+    <div class="rooms-filter">
+      <button class="filter-btn active" data-filter="all">All Rooms</button>
+      <button class="filter-btn" data-filter="available">Available</button>
+      <button class="filter-btn" data-filter="booked">Booked</button>
+    </div>
+
+    <!-- Status bar -->
+    <div class="rooms-status-bar" id="rooms-status-bar">
+      Loading rooms…
+    </div>
+
+    <!-- Realtime indicator -->
+    <div style="margin-bottom:1.5rem">
+      <span class="realtime-dot">Live updates active</span>
+    </div>
+
+    <!-- Dynamic room grid -->
+    <div class="rooms-grid" id="rooms-container">
+      <!-- Populated by main.js -->
+    </div>
+  </div>
+</section>
+
+<!-- ── POLICIES ── -->
+<section style="padding:5rem 0;background:var(--navy-mid)">
+  <div class="container">
+    <div class="text-center fade-in" style="margin-bottom:3rem">
+      <span class="section-label">Hotel Policies</span>
+      <h2 class="section-title">Good to Know</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem">
+      <div class="amenity-card fade-in">
+        <div class="icon">🕐</div>
+        <h4>Check-In / Out</h4>
+        <p>Check-in from 12:00 PM. Check-out by 11:00 AM. Early/late subject to availability.</p>
+      </div>
+      <div class="amenity-card fade-in fade-in-delay-1">
+        <div class="icon">🪪</div>
+        <h4>ID Required</h4>
+        <p>Valid government-issued photo ID required at check-in for all guests.</p>
+      </div>
+      <div class="amenity-card fade-in fade-in-delay-2">
+        <div class="icon">🚭</div>
+        <h4>No Smoking</h4>
+        <p>All rooms are non-smoking. Designated smoking areas available on premises.</p>
+      </div>
+      <div class="amenity-card fade-in fade-in-delay-3">
+        <div class="icon">🐾</div>
+        <h4>Pets</h4>
+        <p>We currently do not accommodate pets. Service animals are welcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-banner">
+  <div class="container cta-banner-inner fade-in">
+    <h2>Can't Decide?<br>Call Us Directly</h2>
+    <p>Our team is happy to help you choose the perfect room for your stay.</p>
+    <a href="tel:+91XXXXXXXXXX" class="btn btn-gold">📞 &nbsp;Call Hotel Hambi</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Hotel Hambi</div>
+        <div class="footer-brand-tag">Diphu · Assam · India</div>
+        <p>Genuine Assamese warmth and modern comfort near Kasa Stadium, Diphu since 2010.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Restaurant</a></li>
+          <li><a href="#">Banquet Hall</a></li>
+          <li><a href="#">Room Service</a></li>
+          <li><a href="#">Parking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <span class="icon">📍</span>
+          Near Kasa Stadium, Diphu, Karbi Anglong, Assam 782460
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">📞</span>
+          +91 XXXXX XXXXX
+        </div>
+        <div class="footer-contact-item">
+          <span class="icon">✉️</span>
+          info@hotelhambi.in
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="current-year"></span> Hotel Hambi. All rights reserved.</p>
+      <p>Designed with ✦ in Assam</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Booking Modal -->
+<div class="booking-modal-overlay" id="booking-modal">
+  <div class="booking-modal">
+    <button class="modal-close" onclick="closeBookingModal()">✕</button>
+    <h2>Reserve Your Room</h2>
+    <p class="room-preview-name"></p>
+    <p id="bm-price" style="color:var(--gold);font-family:var(--font-serif);font-size:1.2rem;font-style:italic;margin-bottom:1.5rem"></p>
+    <form id="booking-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Check-In</label>
+          <input type="date" name="checkin" required />
+        </div>
+        <div class="form-group">
+          <label>Check-Out</label>
+          <input type="date" name="checkout" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Full name" required />
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required />
+      </div>
+      <div class="form-group">
+        <label>Guests</label>
+        <select name="guests">
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4+ Guests</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:0.5rem">
+        Confirm Booking Request
+      </button>
+    </form>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

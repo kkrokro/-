@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Hotel Hambi, Diphu</title>
+  <meta name="description" content="Contact Hotel Hambi in Diphu, Assam. Phone, map, and enquiry form for room bookings and event hosting." />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">Hotel Hambi</span>
+      <span class="nav-logo-tag">Diphu · Assam</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="admin.html">Admin</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="rooms.html">Rooms</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="admin.html">Admin</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span><span>Contact</span>
+    </div>
+    <h1 class="fade-in">Get in <span class="text-gold">Touch</span></h1>
+    <p class="fade-in fade-in-delay-1">We're always happy to hear from you</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Info Column -->
+      <div class="fade-in">
+        <h2>Reach Us</h2>
+        <p>Whether you'd like to make a reservation, enquire about our banquet hall, or simply have a question — our team is here to help.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-info">
+            <h5>Address</h5>
+            <p>Near Kasa Stadium, Diphu,<br>Karbi Anglong, Assam 782460</p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📞</div>
+          <div class="contact-detail-info">
+            <h5>Phone</h5>
+            <p><a href="tel:+91XXXXXXXXXX" style="color:var(--cream)">+91 XXXXX XXXXX</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-info">
+            <h5>Email</h5>
+            <p><a href="mailto:info@hotelhambi.in" style="color:var(--cream)">info@hotelhambi.in</a></p>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🕐</div>
+          <div class="contact-detail-info">
+            <h5>Front Desk Hours</h5>
+            <p>Open 24 Hours, 7 Days a Week</p>
+          </div>
+        </div>
+
+        <!-- Map Embed -->
+        <div class="map-embed">
+          <iframe
+            src="https://maps.google.com/maps?q=Diphu,+Assam,+India&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <!-- Social / Quick Links -->
+        <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(212,175,55,0.12)">
+          <p style="font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem">Quick Links</p>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap">
+            <a href="rooms.html" class="btn btn-outline btn-sm">View Rooms</a>
+            <a href="about.html" class="btn btn-outline btn-sm">About Us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Column -->
+      <div class="contact-form-wrap fade-in fade-in-delay-2">
+        <h3>Send an Enquiry</h3>
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="name" placeholder="Full name" required />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Enquiry Type</label>
+            <select name="type">
+              <option value="">Select enquiry type</option>
+              <option>Room Booking</option>
+              <option>Banquet / Event Hosting</option>
+              <option>Restaurant Reservation</option>
+              <option>Group Booking</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Check-In Date</label>
+              <input type="date" name="checkin" />
+            </div>
+            <div class="form-group">
+              <label>Check-Out Date</label>
+              <input type="date" name="checkout" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell us about your requirements…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">
+            ✦ &nbsp;Send Message
+          </button>
+        </form>
+        <div class="form-success" style="display:none">
+          <div style="font-size:2rem;margin-bottom:1rem">✦</div>
+          <strong style="font-family:var(--font-display);font-size:1.2rem;color:var(--cream);display:block;margin-bottom:0.5rem">Message Received!</strong>
+          Thank you for reaching out. Our team will contact you within 24 hours.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:5rem 0;background:var(--navy-mid)">
+  <div class="container">
+    <div class="text-center fade-in" style="margin-bottom:3rem">
+      <span class="section-label">Quick Answers</span>
+      <h2 class="section-title">Frequently Asked</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:900px;margin:0 auto">
+      <div style="padding:1.5rem;border:1px solid rgba(212,175,55,0.12);border-radius:4px" class="fade-in">
+        <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:400;color:var(--gold);margin-bottom:0.5rem">What are the check-in / check-out times?</h4>
+        <p style="font-size:0.85rem;color:var(--text-muted)">Check-in starts at 12:00 PM. Check-out is by 11:00 AM. Early/late check-in subject to room availability.</p>
+      </div>
+      <div style="padding:1.5rem;border:1px solid rgba(212,175,55,0.12);border-radius:4px" class="fade-in fade-in-delay-1">
+        <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:400;color:var(--gold);margin-bottom:0.5rem">Is parking available?</h4>
+        <p style="font-size:0.85rem;color:var(--text-muted)">Yes, we offer free, CCTV-monitored secure parking for all in-house guests.</p>
+      </div>
+      <div style="padding:1.5rem;border:1px solid rgba(212,175,55,0.12);border-radius:4px" class="fade-in">
+        <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:400;color:var(--gold);margin-bottom:0.5rem">Do you host events?</h4>
+        <p style="font-size:0.85rem;color:var(--text-muted)">Absolutely. Our banquet hall can host weddings, corporate meets, and social gatherings for up to 200 guests.</p>
+      </div>
+      <div style="padding:1.5rem;border:1px solid rgba(212,175,55,0.12);border-radius:4px" class="fade-in fade-in-delay-1">
+        <h4 style="font-family:var(--font-display);font-size:0.95rem;font-weight:400;color:var(--gold);margin-bottom:0.5rem">Is breakfast included?</h4>
+        <p style="font-size:0.85rem;color:var(--text-muted)">Breakfast is available at the restaurant from 7–10 AM at ₹150/person. Select room packages include breakfast.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-name">Hotel Hambi</div>
+        <div class="footer-brand-tag">Diphu · Assam · India</div>
+        <p>Genuine Assamese warmth and modern comfort near Kasa Stadium, Diphu since 2010.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="rooms.html">Rooms</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Restaurant</a></li>
+          <li><a href="#">Banquet Hall</a></li>
+          <li><a href="#">Room Service</a></li>
+          <li><a href="#">Parking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item"><span class="icon">📍</span>Near Kasa Stadium, Diphu, Assam 782460</div>
+        <div class="footer-contact-item"><span class="icon">📞</span>+91 XXXXX XXXXX</div>
+        <div class="footer-contact-item"><span class="icon">✉️</span>info@hotelhambi.in</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span class="current-year"></span> Hotel Hambi. All rights reserved.</p>
+      <p>Designed with ✦ in Assam</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
